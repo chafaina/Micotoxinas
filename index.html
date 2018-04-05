@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <!-- Bloquea trabajar con eventos, por ej: onclick 
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <meta http-equiv="Access-Control-Allow-Headers" content="Content-Type" />
+    <meta http-equiv="Access-Control-Allow-Methods" content="POST" />
+
+    
+    <title>MZ Proyecto</title>
+
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/my-css.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+    <!-- Views -->
+    <div class="views" data-url="index.html">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main" >
+            <!-- Top Navbar-->
+            <div class="navbar custom" >
+                <div class="navbar-inner" >
+                <div class="left" onclick="visiblePopup()">
+                    <a id="cmdfill" class="col button button-fill color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> INICIO </a>
+                </div>
+                <div class="left" name="menu" onclick="visiblePopup()">
+                    <a class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;" href="login.html"> BUSCAR </a>
+                </div>
+                <div class="left" onclick="visiblePopup()">
+                    <button class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> HISTORIAL </button>
+                </div>
+                <div class="left" onclick="visiblePopup()">
+                    <button class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> PERFIL </button>
+                </div>
+
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page custom">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="content-block">
+                           
+                           <div class="list-block media-list">
+                               <ul style="background: rgba(209,234,183,0.4);">
+                               <!-- <ul id="ulNotificaciones" data-bind="foreach: seats" style="background: rgba(209,234,183,0.4);"> -->
+                                    <li class="licustom">
+                                        <div class="item-inner">
+                                            <div class="item-title item-label" style="font-weight: bold;">E-mail</div>
+                                            <div class="item-input-wrap">
+                                                <input type="email" placeholder="Correo">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                           </div>
+                           <input type="button" value="Buscar Micotoxina" id="" onclick="click();">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <div class="toolbar custom">
+                <div class="toolbar-inner">
+                    <!-- Toolbar links -->
+                    <p align="right"><em>© MicotoxinaS 2018. Todos los derechos reservados</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script type="text/javascript" src="js/knockout-3.4.2.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/evento.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+
+</body>
+
+</html>
