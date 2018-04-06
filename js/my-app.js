@@ -172,7 +172,7 @@ function CambiarHtml(){
 
 function activarEtiqueta(newPage){
     //Activar la etiqueta en el evento click
-    $$('.navbarClick').on('click', function (e) {
+    $('.navbarClick').on('click', function (e) {
         var popup = document.getElementsByClassName("col button button-fill color-green")[0];
         //Verifica que no este vacio
         if (popup != null) {
