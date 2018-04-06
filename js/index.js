@@ -1,4 +1,3 @@
-
 var ambiente = ["CLARO AR","CLARO UY","DEKA"],
     producto = ["DkTrack","Obd2","Geo Forms","Geo Ventas"],
     empresa = ["AE","CS","MZ"];
@@ -13,14 +12,36 @@ function casos(){
 function agregarElemento(array,etiqueta,elementId){
 
     for (i = 0; i <=array.length-1; i++){
-
-    var elemento = document.createElement(etiqueta);
-    var contenido = document.createTextNode(array[i]);
-    elemento.appendChild(contenido);
-    document.getElementById(elementId).appendChild(elemento);
+        var elemento = document.createElement(etiqueta);
+        var contenido = document.createTextNode(array[i]);
+        elemento.appendChild(contenido);
+        document.getElementById(elementId).appendChild(elemento);
     }
 
 }
+
+
+/*
+
+// Initialize App  
+var myApp = new Framework7();
+        
+// Initialize View          
+var mainView = myApp.addView('.view-main')          
+        
+// Load page from about.html file to main View:
+mainView.router.loadPage('about.html');
+
+// Initialize App  
+var myApp = new Framework7();
+        
+// Initialize View          
+var mainView = myApp.addView('.view-main')          
+        
+// Go back on main View
+mainView.router.back();
+
+*/
 
 
 /**** FIN ****/
