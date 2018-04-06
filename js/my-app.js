@@ -108,12 +108,22 @@ function inicializarF7(){
         
     })
 
+    // Option 1. Usar la devolución de llamada de página para la página
+    myApp.onPageInit('resultado', function (page) {
+        //onPageBeforeInit
+        if (document.getElementById('txtObservacion').value!=""){
+            console.log('no es vacio');
+        }
+        //activarEtiqueta(true);
+    })
+
 
     
 
     // Handle Cordova Device Ready Event
     $$(document).on('deviceready', function() {
 
+        casos();
 
         activarEtiqueta(false);
 
@@ -141,7 +151,8 @@ function inicializarF7(){
             });
         }, false);
 
-        console.log("Cargo Perfecto!!!");
+        /**** FIN ****/
+        console.log("deviceReady");
     });
 
 
@@ -182,4 +193,20 @@ function activarEtiqueta(newPage){
         //console.log (e.target);
 
     });
+}
+
+function loadPage() {
+        if (document.getElementById('txtObservacion').value!=""){
+
+            // Initialize App  
+            var myApp = new Framework7();
+                    
+            // Initialize View          
+            var mainView = myApp.addView('.view-main')          
+                    
+            // Load page from about.html file to main View:
+            mainView.router.loadPage('buscador.html');
+
+            console.log('no es vacio');
+        }
 }
