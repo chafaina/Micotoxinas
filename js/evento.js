@@ -169,35 +169,9 @@ function cualFue(){
 
 
 function visiblePopup(){
-    var popup = document.getElementsByClassName("col button button-fill color-green")[0];
-    
-    //deberia consultar si popup tiene una coleccion html
-    popup.setAttribute("class","col button color-green");
-    //popup.removeClass('col button button-fill color-green').addClass('col button color-green');
-    console.log(popup);
 
-        $$('.left').on('click', function (e) {
-            //console.log($$(this).attr('html'));
-            e.target.setAttribute("class","col button button-fill color-green");
-            console.log (e.target);
-            /*
-            tag = e.target.tagName;
-            parentNode = e.target;
-            console.log("TAG >>> " + tag);
-            console.log ("parentNode >>> " + parentNode);
-            console.log (parentNode);
-            console.log ("Padre >>>")
-            console .log($$(e.target).parent()[0]);
-            console .log($$($$(e.target).parent()[0]).parent()[0]);
-            console.log("HIJO >>>")
-            console .log($$($$(e.target).parent()[0]).parent()[0].firstChild);
-            hijo = $$($$(e.target).parent()[0]).parent()[0].childNodes[0].nodeClass;
-           
-            console.log(hijo);
-            element = document.getElementById(tag);
-            console.log ("element >>> " + element);
-            //falta obtenr if checked == true*/
-        });
+
+
 
 
 }

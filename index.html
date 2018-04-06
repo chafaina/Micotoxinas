@@ -39,24 +39,24 @@
 <body>
 
     <!-- Views -->
-    <div class="views" data-url="index.html">
+    <div class="views">
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main" >
             <!-- Top Navbar-->
             <div class="navbar custom" >
                 <div class="navbar-inner" >
-                <div class="left" onclick="visiblePopup()">
-                    <a id="cmdfill" class="col button button-fill color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> INICIO </a>
-                </div>
-                <div class="left" name="menu" onclick="visiblePopup()">
-                    <a class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;" href="login.html"> BUSCAR </a>
-                </div>
-                <div class="left" onclick="visiblePopup()">
-                    <button class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> HISTORIAL </button>
-                </div>
-                <div class="left" onclick="visiblePopup()">
-                    <button class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> PERFIL </button>
-                </div>
+                    <div class="left navbarClick">
+                        <a href="" id="cmdfill" class="col button button-fill color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> INICIO </a>
+                    </div>
+                    <div class="left navbarClick">
+                        <a href="buscador.html" class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> BUSCAR </a>
+                    </div>
+                    <div class="left navbarClick">
+                        <a href="historial.html" class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> HISTORIAL </a>
+                    </div>
+                    <div class="left navbarClick">
+                        <a href="perfil.html" class="col button color-green" style="color: white; font-weight: bold; letter-spacing: 1.5px; border: 0px;"> PERFIL </a>
+                    </div>
 
                 </div>
             </div>
@@ -68,20 +68,88 @@
                     <div class="page-content">
                         <div class="content-block">
                            
-                           <div class="list-block media-list">
-                               <ul style="background: rgba(209,234,183,0.4);">
-                               <!-- <ul id="ulNotificaciones" data-bind="foreach: seats" style="background: rgba(209,234,183,0.4);"> -->
-                                    <li class="licustom">
-                                        <div class="item-inner">
-                                            <div class="item-title item-label" style="font-weight: bold;">E-mail</div>
-                                            <div class="item-input-wrap">
-                                                <input type="email" placeholder="Correo">
-                                            </div>
+                              <div class="content-block-title">Cargar Caso Nuevo:</div>
+                              <div class="list-block">
+                                <ul style="background: rgba(209,234,183,0.4);">
+                                  <li>
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-title label">Fecha Inicio:</div>
+                                        <div class="item-input">
+                                          <input id="fecinicio" type="date" placeholder="Fechainicio" value="2017-12-12">
                                         </div>
-                                    </li>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-title label">Fecha Cierre:</div>
+                                        <div class="item-input">
+                                          <input id="feccierre" type="date" placeholder="FechaCierre" value="2017-12-13">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-title label">Ambiente</div>
+                                        <div class="item-input">
+                                          <select id="ambiente">
+                                          </select>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-title label">Producto</div>
+                                        <div class="item-input">
+                                          <select id="producto">
+                                          </select>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-title label">Empresa</div>
+                                        <div class="item-input">
+                                          <select id="empresa">
+                                          </select>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <!-- INPUT TYPE TEXT -->
+                                  <li>
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-title label">Caso:</div>
+                                        <div class="item-input">
+                                          <input id="caso" type="text" placeholder="Motivo del caso" style="height:150px;">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-title label">Resolucion:</div>
+                                        <div class="item-input">
+                                          <input type="text" placeholder="Resolucion" style="height:150px;">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
                                 </ul>
-                           </div>
-                           <input type="button" value="Buscar Micotoxina" id="" onclick="click();">
+                                <a href="#" class="button button-fill confirmar" style="margin-bottom: 10px">Confirmar</a>
+                                <a href="#" class="button button-fill cancelar" style="margin-bottom: 10px">Cancelar</a>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -101,6 +169,7 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/evento.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
 
 </body>

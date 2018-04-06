@@ -33,10 +33,13 @@ function inicializarF7(){
     
 
     // Option 1. Usar la devolución de llamada de página para la página
-    myApp.onPageInit('casos', function (page) {
-
-        casos();
+    myApp.onPageInit('buscador', function (page) {
         
+
+        activarEtiqueta(true);
+        
+
+
         $$('.confirmar').on('click', function () {
             //alertaConfirmar
             var caso = document.getElementById("caso");
@@ -89,7 +92,21 @@ function inicializarF7(){
 
     })
 
+    // Option 1. Usar la devolución de llamada de página para la página
+    myApp.onPageInit('historial', function (page) {
+        
 
+        activarEtiqueta(true);
+        
+    })
+
+    // Option 1. Usar la devolución de llamada de página para la página
+    myApp.onPageInit('perfil', function (page) {
+        
+
+        activarEtiqueta(true);
+        
+    })
 
 
     
@@ -97,12 +114,8 @@ function inicializarF7(){
     // Handle Cordova Device Ready Event
     $$(document).on('deviceready', function() {
 
-        //myApp.mainView.router.loadPage('about.html');
-        //myApp.mainView.router.load({url: "/about.hmtl"})
-        console.log(myApp.mainView.activePage);
-        //myApp.mainView.activePage= 'about.html';
-        console.log(myApp.mainView.main);
 
+        activarEtiqueta(false);
 
         cargarListado();
         
@@ -138,20 +151,35 @@ function inicializarF7(){
 
 inicializarF7();
 
-
+/* no recomendable
 function CambiarHtml(){
-        var myApp = new Framework7({
-        //modalTitle: 'Confirma che!'
-
-        //loadPage: 'login.html'
-
-        /*preroute: function (view, options) {
-            //view.router.loadPage('about.html'); //load another page with auth form
-            if (!userLoggedIn) {
-                view.router.loadPage('auth.html'); //load another page with auth form
-                return false; //required to prevent default router action
-            }
-        }*/
-    });
+    var myApp = new Framework7({});
     setTimeout("location.href='login.html'", 5000);
+}
+*/
+
+
+function activarEtiqueta(newPage){
+    //Activar la etiqueta en el evento click
+    $$('.navbarClick').on('click', function (e) {
+        var popup = document.getElementsByClassName("col button button-fill color-green")[0];
+        //Verifica que no este vacio
+        if (popup != null) {
+            popup.setAttribute("class","col button color-green");
+            //console.log(popup);
+        }
+        //Porque se genera dos etiquetas con la misma class
+        if(newPage==true){
+            var popup = document.getElementsByClassName("col button button-fill color-green")[0];
+            //Verifica que no este vacio
+            if (popup != null) {
+            popup.setAttribute("class","col button color-green");
+            //console.log(popup);
+        }
+        }
+        //console.log($$(this).attr('html'));
+        e.target.setAttribute("class","col button button-fill color-green");
+        //console.log (e.target);
+
+    });
 }
