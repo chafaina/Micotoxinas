@@ -1,12 +1,12 @@
-var ambiente = ["CLARO AR","CLARO UY","DEKA"],
-    producto = ["DkTrack","Obd2","Geo Forms","Geo Ventas"],
-    empresa = ["AE","CS","MZ"];
+var cultivo = ["Sorgo","Alfafa","Maiz"],
+    animal = ["Bovino de Leche","Bovino de Carne"],
+    ubicacion = ["Silo","Grano"];
     
 
 function casos(){
-	agregarElemento(ambiente,"option","ambiente");
-	agregarElemento(producto,"option","producto");
-	agregarElemento(empresa,"option","empresa");
+	agregarElemento(cultivo,"option","cultivo");
+	agregarElemento(animal,"option","animal");
+	agregarElemento(ubicacion,"option","ubicacion");
 }
 
 function agregarElemento(array,etiqueta,elementId){

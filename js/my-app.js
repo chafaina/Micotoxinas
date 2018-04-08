@@ -205,8 +205,11 @@ function loadPage() {
             var mainView = myApp.addView('.view-main')          
                     
             // Load page from about.html file to main View:
-            mainView.router.loadPage('buscador.html');
+            mainView.router.loadPage('resultado.html');
 
             console.log('no es vacio');
+        }
+        else {
+            alert("Por favor, seleccionar criterio de busqueda");
         }
 }

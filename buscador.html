@@ -19,64 +19,49 @@
 </div>
 
 <div class="pages">
-    <div data-page="buscador" class="page" id="login">
+    <div data-page="buscador" class="page custom">
         <div class="page-content">
-            <div class="content-block">
-                
-
-            </div>
-            <div data-role="content">
-                <form action="#" data-ajax="false">
-                    <label>Titulo:</label>
-                    <input type="text" id="titulo" name="titulo" onclick="click();">
-                    <label>Autor:</label>
-                    <input type="text" id="autor" name="autor">
-                    <label>Editorial:</label>
-                    <input type="text" id="editorial" name="editorial">
-                    <label>Año:</label>
-                    <input type="text" id="anio" name="anio">
-                    <input type="button" value="Almacenar en dispositivo" id="forma" onclick="click()">
-                </form>
-                <div id="salida"></div>
-            </div>
-            <input type="button" value="Almacenar en dispositivo 2" id="forma1" onclick="click();">
+            <div class="content-block" >
             
-            <form class="list form-store-data" id="my-form">
+
+              <form class="list form-store-data" id="my-form">
                 <div class="list-block">
                     <div class="list inline-labels no-hairlines-md">
-                      <ul>
-                        <li class="item-content item-input">
+                      <ul style="background: rgba(209,234,183,0.4);">
+                        <li class="item-content item-input" style="background: rgba(209,234,183,0.4);">
                           <div class="item-media">
                             <i class="icon demo-list-icon"></i>
                           </div>
                           <div class="item-inner">
-                            <div class="item-title item-label">Usuario</div>
+                            <div class="item-title item-label">Micotoxina</div>
                             <div class="item-input-wrap">
-                              <input type="text" placeholder="Usuario:" id="usuario" required validate>
+                              <input type="text" placeholder="Micotoxina:" id="usuario" required validate>
                               <span class="input-clear-button"></span>
                             </div>
                           </div>
+                          <br>
                         </li>
                         <li class="item-content item-input">
                           <div class="item-media">
                             <i class="icon demo-list-icon"></i>
                           </div>
                           <div class="item-inner">
-                            <div class="item-title item-label">Contraseña</div>
+                            <div class="item-title item-label">Cultivo</div>
                             <div class="item-input-wrap">
-                              <input type="password" placeholder="Contraseña" id="pass" required validate>
+                              <input type="text" placeholder="Cultivo" id="pass" required validate>
                               <span class="input-clear-button"></span>
                             </div>
                           </div>
                         </li>
+                        <br>
                         <li class="item-content item-input">
                           <div class="item-media">
                             <i class="icon demo-list-icon"></i>
                           </div>
                           <div class="item-inner">
-                            <div class="item-title item-label">E-mail</div>
+                            <div class="item-title item-label">Ambiente</div>
                             <div class="item-input-wrap">
-                              <input type="email" placeholder="Correo">
+                              <input type="text" placeholder="Ambiente">
                               <span class="input-clear-button"></span>
                             </div>
                           </div>
@@ -85,11 +70,16 @@
                     </div>
                 </form>
                 <br>
-                <div class="block block-strong row">
-                  <div class="col"><a class="button convert-form-to-data" href="#">Confirmar</a></div>
-                  <div class="col"><a class="button fill-form-from-data" href="#">Cancelar</a></div>
-                </div>
+                <!-- <div class="block block-strong row"> -->
+                  <div class="col"><a class="button button-fill color-green" href="#">BUSCAR</a></div>
+                  <br>
+                  <div class="col"><a href="index.html" class="button button-fill color-green" href="#">VOLVER</a></div>
+                <!-- </div> -->
+
             </div>
+            
+
+           
 
             </div>
         </div>
