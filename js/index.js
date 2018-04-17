@@ -10,7 +10,7 @@ function casos(){
 }
 
 function agregarElemento(array,etiqueta,elementId){
-
+    
     for (i = 0; i <=array.length-1; i++){
         var elemento = document.createElement(etiqueta);
         var contenido = document.createTextNode(array[i]);

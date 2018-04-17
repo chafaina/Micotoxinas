@@ -52,6 +52,7 @@ function exitoHandler(){
 }
 function nullHandler(){
 	//se duplican los casos de exitos, por eso lo dejamos vacio
+
 }
 //Finaliza la carga
 window.onload = function() {
@@ -60,6 +61,17 @@ window.onload = function() {
 	//document.getElementById("enlistar").onclick = enlistarValores;
 	//Abrimos la base de datos
 	db = openDatabase (dbNombre, dbVersion , dbDescripcion , dbSize);
+
+	/*
+	db.transaction (function (tx){
+		tx.executeSql('DELETE FROM cultivos',
+			[],
+			nullHandler,
+			errorHandler);}, //el execute primero va al error
+			errorHandler,nullHandler //transaction primero va al error y despues al exito
+	);
+	*/
+
 	//Creamos o abrimos la tabla
 	db.transaction (function (tx){
 		tx.executeSql('CREATE TABLE IF NOT EXISTS cultivos (id INTEGER NOT NULL PRIMARY KEY, nombre TEXT NOT NULL, categoria INTEGER NOT NULL, estado INGEGER)',
@@ -97,15 +109,35 @@ function enlistarValores(){
 */
 //Insertamos el registro
 function insertarCultivos(){
+
+	var cant;
+	db.transaction( function (tx){
+		tx.executeSql('SELECT top(id) FROM cultivos;', [],
+			//Funcion succes
+			function(tx,data) {
+				if (data != null && data.rows != null){
+					console.log(data.id);
+					cant = data.rows;
+
+
+				}
+			},errorHandler);
+	}, errorHandler, nullHandler);
+
 	//Insertamos el valor
 	db.transaction(function(tx){
 		len = arrayCultivos.length;
 		//tx.executeSql('DELETE cultivos');
 		for (var i = 0; i <= len -1; i++) {
-
-			tx.executeSql('INSERT INTO cultivos(nombre,categoria,estado) VALUES(?,?,?)',
-				[ arrayCultivos[i].nombre,arrayCultivos[i].categoria,arrayCultivos[i].estado],
-				nullHandler,errorHandler);
+				if (cant==0)
+				{
+					
+					tx.executeSql('INSERT INTO cultivos(nombre,categoria,estado) VALUES(?,?,?)',
+						[ arrayCultivos[i].nombre,arrayCultivos[i].categoria,arrayCultivos[i].estado],
+						nullHandler,errorHandler);
+				}
+				
+			
     	}
 
 	});
